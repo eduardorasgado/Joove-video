@@ -12,6 +12,7 @@ class Playlist extends Component {
 									  author={item.author}
 									  type={item.type}
 									  src={item.src}
+									  image={item.cover}
 						/>
 					})
 				}
