@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './media.css';
-
+//fue instalado aparte con npm install prop-types --save
+import PropTypes from 'prop-types';
 
 class Media extends Component{
 	render(){
@@ -15,5 +16,9 @@ class Media extends Component{
 			);
 	}
 }
+
+Media.propTypes = {
+
+};
 
 export default Media;
