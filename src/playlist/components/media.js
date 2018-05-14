@@ -4,21 +4,39 @@ import './media.css';
 import PropTypes from 'prop-types';
 
 class Media extends Component{
+	state = {
+		author: "EduardoRasgado",
+	};
+	
+	/*
 	constructor(props){
 		super(props);
-		this.handleClick = this.handleClick.bind(this);
+		//ES6 way
+		/*this.handleClick = this.handleClick.bind(this);
+		//states can change, props cant.
+		this.state = {
+			author: props.author,
+		};
 	}
-	
-	handleClick(event){
+	*/
+
+	//arrowfunction inherate his father's props ES7
+	handleClick = (event) => {
 		window.alert(this.props.title);
+
+		//changing the state
+		this.setState({
+			author: "ElizabethLopez",
+		})
 	}
+
 	render(){
 		return(
-			<div className="Media" onClick={() => this.handleClick()}>
+			<div className="Media" onClick={this.handleClick}>
 				<div className="Media-cover">
 					<img className="Media-image" src={this.props.image} alt="" width={260} height={160}/>
 					<h3 className="Media-title">{this.props.title}</h3>
-					<p className="Media-author">{this.props.author}</p>
+					<p className="Media-author">{this.state.author}</p>
 				</div>
 			</div>
 			);
