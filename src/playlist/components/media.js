@@ -18,7 +18,9 @@ class Media extends Component{
 }
 
 Media.propTypes = {
-
+	image: PropTypes.string,
+	title: PropTypes.string,
+	author: PropTypes.string,
 };
 
 export default Media;
