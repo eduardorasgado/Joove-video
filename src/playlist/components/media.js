@@ -4,30 +4,39 @@ import './media.css';
 import PropTypes from 'prop-types';
 
 class Media extends Component{
+	/*
 	state = {
 		author: "EduardoRasgado",
 	};
 	
-	/*
+	*/
 	constructor(props){
 		super(props);
 		//ES6 way
-		/*this.handleClick = this.handleClick.bind(this);
+		/*this.handleClick = this.handleClick.bind(this);*/
 		//states can change, props cant.
+		this.nameConditioning = false;
 		this.state = {
 			author: props.author,
 		};
 	}
-	*/
-
+	
 	//arrowfunction inherate his father's props ES7
 	handleClick = (event) => {
 		window.alert(this.props.title);
-
 		//changing the state
-		this.setState({
-			author: "ElizabethLopez",
-		})
+		if (this.nameConditioning == false) {
+			this.nameConditioning = true;
+			this.setState({
+				author: "ElizabethLopez",
+			})
+		}
+		else{
+			this.nameConditioning = false;
+			this.setState({
+				author: "EduardoRasgado",
+			})
+		}
 	}
 
 	render(){
