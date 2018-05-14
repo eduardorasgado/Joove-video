@@ -4,9 +4,13 @@ import './media.css';
 import PropTypes from 'prop-types';
 
 class Media extends Component{
+	constructor(props){
+		super(props);
+		this.handleClick = this.handleClick.bind(this);
+	}
 	
 	handleClick(event){
-		window.alert("Buh!");
+		window.alert(this.props.title);
 	}
 	render(){
 		return(
