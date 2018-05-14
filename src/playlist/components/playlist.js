@@ -8,11 +8,9 @@ class Playlist extends Component {
 				<div>
 				{
 					playlist.map((item) => {
-						return <Media title={item.title}
-									  author={item.author}
-									  type={item.type}
-									  src={item.src}
-									  image={item.cover}
+						//ES7 let us to use spread operator
+						return <Media {...item}
+									  key={item.id}
 						/>
 					})
 				}
