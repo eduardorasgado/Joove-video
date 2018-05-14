@@ -3,20 +3,24 @@ import Media from './media'
 
 class Playlist extends Component {
 	render(){
-		const playlist = this.props.data.categories[0].playlist;
+		const categories = this.props.data.categories;
 		return(
 				<div>
 				{
-					playlist.map((item) => {
-						//ES7 let us to use spread operator
-						return <Media {...item}
-									  key={item.id}
-						/>
-					})
-				}
+					//each category of json
+					categories.map((playlistGroup) => {
+						// playlist from each category
+						return playlistGroup.playlist.map((item) => {
 
+							//ES7 let us to use spread operator
+							return <Media {...item}
+									key={item.id}
+							/>
+						}) //end  return playlistGroups.playlist.map
+					}) //end categories.map
+				}
 				</div>
-			);
+			); //end render return
 	}
 }
 
