@@ -4,6 +4,7 @@ import './media.css';
 import PropTypes from 'prop-types';
 import Play from '../../icons/components/play';
 import Pause from '../../icons/components/pause';
+import Volume from '../../icons/components/volume';
 
 class Media extends PureComponent{
 	/*
@@ -60,11 +61,14 @@ class Media extends PureComponent{
 								{this.state.author}		
 					</p>
 					<Play
-					 	  size={15} 
-					 	  color={"white"}/>
+					 	size={15} 
+					 	color={"white"}/>
 					<Pause
-					 	  size={15} 
-					 	  color={"white"}/>
+					 	size={15} 
+					 	color={"white"}/>
+					<Volume
+					 	size={15} 
+					 	color={"white"}/>
 				</div>
 			</div>
 			);
