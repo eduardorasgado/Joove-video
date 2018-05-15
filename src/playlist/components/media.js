@@ -54,7 +54,7 @@ class Media extends Component{
 
 //Validation with prop-types module
 Media.propTypes = {
-	image: PropTypes.string.isRequired,
+	cover: PropTypes.string.isRequired,
 	title: PropTypes.string.isRequired,
 	author: PropTypes.string.isRequired,
 	type: PropTypes.oneOf(['video','audio']),
