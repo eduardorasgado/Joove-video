@@ -3,6 +3,7 @@ import './media.css';
 //fue instalado aparte con npm install prop-types --save
 import PropTypes from 'prop-types';
 import Play from '../../icons/components/play';
+import Pause from '../../icons/components/pause';
 
 class Media extends PureComponent{
 	/*
@@ -59,6 +60,9 @@ class Media extends PureComponent{
 								{this.state.author}		
 					</p>
 					<Play
+					 	  size={15} 
+					 	  color={"white"}/>
+					<Pause
 					 	  size={15} 
 					 	  color={"white"}/>
 				</div>
