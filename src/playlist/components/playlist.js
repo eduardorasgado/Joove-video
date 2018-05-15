@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
-import Media from './media'
+import Media from './media';
 
 class Playlist extends Component {
 	render(){
-		const categories = this.props.data.categories;
+		const playlist = this.props.playlistGroup;
 		return(
+
 				<div>
+				<p>{playlist.description}</p>
+				<h2>{playlist.title}</h2>
 				{
-					//each category of json
-					categories.map((playlistGroup) => {
-						// playlist from each category
-						return playlistGroup.playlist.map((item) => {
+					playlist.playlist.map((item) => {
 
 							//ES7 let us to use spread operator
 							return <Media {...item}
 									key={item.id}
-							/>
+									/>
 						}) //end  return playlistGroups.playlist.map
-					}) //end categories.map
 				}
 				</div>
 			); //end render return
