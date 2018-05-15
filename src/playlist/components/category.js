@@ -9,9 +9,12 @@ class Category extends Component{
 				<div className="category-container">
 					{
 						categories.map((playlistGroup) => {
-							return (<Playlist 
+							return (
+
+								<Playlist 
 								playlistGroup={playlistGroup} 
-								key={playlistGroup.id}/>)
+								key={playlistGroup.id}/>
+								)
 						})
 					}
 				</div>
