@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import './media.css';
 //fue instalado aparte con npm install prop-types --save
 import PropTypes from 'prop-types';
+import Play from '../../icons/components/play';
 
 class Media extends PureComponent{
 	/*
@@ -54,7 +55,12 @@ class Media extends PureComponent{
 				<div className="Media-cover">
 					<img className="Media-image" src={this.props.cover} alt="" width={218} height={120}/>
 					<h3 className="Media-title">{this.titleShortened()}</h3>
-					<p className="Media-author">{this.state.author}</p>
+					<p className="Media-author">
+								{this.state.author}		
+					</p>
+					<Play
+					 	  size={15} 
+					 	  color={"white"}/>
 				</div>
 			</div>
 			);
