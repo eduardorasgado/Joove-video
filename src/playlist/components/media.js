@@ -39,12 +39,21 @@ class Media extends Component{
 		}
 	}
 
+	titleShortened(){
+		var title = this.props.title;
+		if (title.length >= 44) {
+			var shortened = title.substr(0,44);
+			return shortened+"...";
+		}
+		return title;
+	}
+
 	render(){
 		return(
 			<div className="Media" onClick={this.handleClick}>
 				<div className="Media-cover">
 					<img className="Media-image" src={this.props.cover} alt="" width={218} height={120}/>
-					<h3 className="Media-title">{this.props.title}</h3>
+					<h3 className="Media-title">{this.titleShortened()}</h3>
 					<p className="Media-author">{this.state.author}</p>
 				</div>
 			</div>
