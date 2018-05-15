@@ -2,9 +2,11 @@ import React, { PureComponent } from 'react';
 import './media.css';
 //fue instalado aparte con npm install prop-types --save
 import PropTypes from 'prop-types';
+//dump components
 import Play from '../../icons/components/play';
 import Pause from '../../icons/components/pause';
 import Volume from '../../icons/components/volume';
+import Fullscreen from '../../icons/components/fullscreen';
 
 class Media extends PureComponent{
 	/*
@@ -69,6 +71,9 @@ class Media extends PureComponent{
 					<Volume
 					 	size={15} 
 					 	color={"white"}/>
+					 <Fullscreen
+					 	size={15} 
+					 	color={"white"}/>	
 				</div>
 			</div>
 			);
