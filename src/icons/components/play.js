@@ -5,7 +5,7 @@ function Play(props){
 	return(
 		/*Passed props to icon with spread operator*/
 		<Icon {...props}>
-			{/*Children de Icon*/}
+			{/*Icon Children*/}
 			<path d="M6 4l20 12-20 12z"></path>
 		</Icon>
 		);
