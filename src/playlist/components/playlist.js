@@ -8,8 +8,10 @@ class Playlist extends Component {
 		return(
 
 				<div className="playlist-block">
-				<p className="playlist-p">{playlist.description}</p>
-				<h2 className="playlist-title">{playlist.title}</h2>
+				<div className="playlist-header">
+					<p className="playlist-p">{playlist.description}</p>
+					<h2 className="playlist-title">{playlist.title}</h2>
+				</div>
 				{
 					playlist.playlist.map((item) => {
 
