@@ -1,5 +1,6 @@
 import React from 'react';
 import Media from './media';
+//imported here but used in category.js
 import './playlist.css';
 
 /*

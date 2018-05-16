@@ -1,16 +1,17 @@
 import React from 'react';
 import Playlist from '../../playlist/components/playlist';
+import './category.css';
 
 function Category(props){
 	return(
-		<div className="playlist-block">
-			<div className="playlist-header">
-				<div className="playlist-tagged">
-					<p className="playlist-p">{props.description}</p>
-					<h2 className="playlist-title">{props.title}</h2>
+		<div className="category-block">
+			<div className="category-header">
+				<div className="category-tagged">
+					<p className="category-p">{props.description}</p>
+					<h2 className="category-title">{props.title}</h2>
 				</div>
 			</div>
-			<div className="playlist-block2">
+			<div className="category-block2">
 						<Playlist
 							playlist={props.playlist}
 						/>

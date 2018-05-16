@@ -6,7 +6,7 @@ import './categories.css';
 function Categories(props){
 
 return (
-		<div className="category-container">
+		<div className="categories-container">
 			{
 				props.categories.map((item) => {
 					return (
