@@ -28,7 +28,7 @@ class Home extends Component {
 			<HandleError>
 				<HomeLayout>
 					<Related />
-					<Categories categories={this.props.data}
+					<Categories categories={this.props.data.categories}
 					handleOpenModal={this.handleOpenModal} />
 					{/*We should send children to modalC*/}
 					
