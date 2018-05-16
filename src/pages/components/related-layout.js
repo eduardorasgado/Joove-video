@@ -1,9 +1,10 @@
 import React from 'react';
+import './related-layout.css';
 import logo from '../../../images/logo.png'
 
 function Related(props){
 	return (
-		<div>
+		<div className="Related">
 			<img src={logo} width={250}/>
 		</div>
 		);
