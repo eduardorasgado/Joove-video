@@ -3,6 +3,7 @@ import HomeLayout from '../components/home-layout';
 import Categories from '../../categories/components/categories';
 import Related from '../components/related-layout';
 import ModalContainer from '../../widgets/containers/modal';
+import Modal from '../../widgets/components/modal-component';
 
 class Home extends Component {
 	render(){
@@ -14,7 +15,7 @@ class Home extends Component {
 				{/*We should send children to modalC*/}
 				<ModalContainer>
 					<Modal>
-						
+						<h1>Bienvenido a Joove, yeah!</h1>
 					</Modal>
 				</ModalContainer>
 			</HomeLayout>
