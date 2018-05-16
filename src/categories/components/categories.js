@@ -22,4 +22,4 @@ return (
 	);
 }
 
-export default Categories
+export default Categories;

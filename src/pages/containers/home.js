@@ -4,11 +4,11 @@ import Categories from '../../categories/components/categories';
 import Related from '../components/related-layout';
 import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal-component';
+import HandleError from '../../errors/containers/handle-error';
 
 class Home extends Component {
 	state = {
 			modalVisible: false,
-			handleError: false,
 	}
 
 	handleOpenModal = () => {
@@ -23,39 +23,29 @@ class Home extends Component {
 		});
 	}
 
-	componentDidCatch(error, info) {
-		//if an error occurs
-		this.setState({
-			handleError: true
-		});
-	}
-
 	render() {
-		if (this.state.handleError) {
-			return <h3>Oops! Algo salió mal, lo sentimos mucho :c porque no recargas desde el inicio?</h3>;
-		}
-
-		const categoriesData  = this.props.data.categories;
 		return(
-			<HomeLayout>
-				<Related />
-				<Categories categories={categoriesData}
-				handleOpenModal={this.handleOpenModal} />
-				{/*We should send children to modalC*/}
-				
-				{
-				/*For not satisfied appearance
-						condition ? bject_to_appears :
-				*/
-					/*If condition is satisfied*/
-					this.state.modalVisible &&
-					<ModalContainer>
-						<Modal handleClick={this.handleCloseModal}>
-							<h1>Bienvenido a Joove, yeah!</h1>
-						</Modal>
-					</ModalContainer>
-				}
-			</HomeLayout>
+			<HandleError>
+				<HomeLayout>
+					<Related />
+					<Categories categories={this.props.data}
+					handleOpenModal={this.handleOpenModal} />
+					{/*We should send children to modalC*/}
+					
+					{
+					/*For not satisfied appearance
+							condition ? bject_to_appears :
+					*/
+						/*If condition is satisfied*/
+						this.state.modalVisible &&
+						<ModalContainer>
+							<Modal handleClick={this.handleCloseModal}>
+								<h1>Bienvenido a Joove, yeah!</h1>
+							</Modal>
+						</ModalContainer>
+					}
+				</HomeLayout>
+			</HandleError>
 			);
 	}
 }
