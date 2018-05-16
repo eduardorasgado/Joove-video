@@ -1,9 +1,10 @@
 import React from 'react';
+import logo from '../../../images/logo.png'
 
-function related(props){
+function Related(props){
 	return (
 		<div>
-			<img src="" width={250}/>
+			<img src={logo} width={250}/>
 		</div>
 		);
 }
