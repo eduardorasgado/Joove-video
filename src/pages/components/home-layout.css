@@ -1,0 +1,10 @@
+body {
+	margin: 0;
+	font-family: "lato";
+}
+
+.HomeLayout {
+	display: flex;
+	margin: 0 auto;
+	min-height: 100vh;
+}

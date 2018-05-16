@@ -11,8 +11,6 @@ function Category(props){
 				</div>
 			</div>
 			<div className="playlist-block2">
-			
-						//ES7 let us to use spread operator
 						<Playlist
 							playlist={props.playlist}
 						/>

@@ -10,13 +10,15 @@
 	padding-left: 40px;
 	margin-top: 15px;
 	margin-bottom: 15px;
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 72vw;
 }
 
 .playlist-block2 {
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
-
 }
 
 .playlist-header {
