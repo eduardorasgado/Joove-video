@@ -8,11 +8,17 @@ import Modal from '../../widgets/components/modal-component';
 class Home extends Component {
 	state = {
 			modalVisible: false,
-		}
+	}
 
-	handleCloseModalClick = (event) => {
+	handleOpenModal = () => {
 		this.setState({
-			modalVisible: !this.state.modalVisible,
+			modalVisible: true,
+		})
+	}
+
+	handleCloseModal = (event) => {
+		this.setState({
+			modalVisible: false,
 		})
 	}
 	render(){
@@ -20,7 +26,8 @@ class Home extends Component {
 		return(
 			<HomeLayout>
 				<Related />
-				<Categories categories={categoriesData} />
+				<Categories categories={categoriesData}
+				handleOpenModal={this.handleOpenModal} />
 				{/*We should send children to modalC*/}
 				
 				{
@@ -30,7 +37,7 @@ class Home extends Component {
 					/*If condition is satisfied*/
 					this.state.modalVisible &&
 					<ModalContainer>
-						<Modal handleClick={this.handleCloseModalClick}>
+						<Modal handleClick={this.handleCloseModal}>
 							<h1>Bienvenido a Joove, yeah!</h1>
 						</Modal>
 					</ModalContainer>

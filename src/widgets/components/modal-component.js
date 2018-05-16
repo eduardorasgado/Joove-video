@@ -6,7 +6,7 @@ function ModalComponent(props){
 		<div className="Modal">
 			Portal
 			{props.children}
-			<button onClick={props.handleCloseModalClick}>Close</button>
+			<button onClick={props.handleClick}>Close</button>
 		</div>
 		);
 }

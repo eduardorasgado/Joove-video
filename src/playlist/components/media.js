@@ -9,39 +9,14 @@ import Volume from '../../icons/components/volume';
 import Fullscreen from '../../icons/components/fullscreen';
 
 class Media extends PureComponent{
-	/*
-	state = {
-		author: "EduardoRasgado",
-	};
-	
-	*/
 	constructor(props){
 		super(props);
 		//ES6 way
 		/*this.handleClick = this.handleClick.bind(this);*/
 		//states can change, props cant.
-		this.nameConditioning = false;
 		this.state = {
 			author: props.author,
 		};
-	}
-	
-	//arrowfunction inherate his father's props ES7
-	handleClick = (event) => {
-		window.alert(this.props.title);
-		//changing the state
-		if (this.nameConditioning == false) {
-			this.nameConditioning = true;
-			this.setState({
-				author: "ElizabethLopez",
-			})
-		}
-		else{
-			this.nameConditioning = false;
-			this.setState({
-				author: "EduardoRasgado",
-			})
-		}
 	}
 
 	titleShortened(){
@@ -55,7 +30,7 @@ class Media extends PureComponent{
 
 	render(){
 		return(
-			<div className="Media" onClick={this.handleClick}>
+			<div className="Media" onClick={this.props.handleClick}>
 				<div className="Media-cover">
 					<img className="Media-image" src={this.props.cover} alt="" width={218} height={120}/>
 					<h3 className="Media-title">{this.titleShortened()}</h3>

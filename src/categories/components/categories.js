@@ -2,7 +2,6 @@ import React from 'react';
 import Category from './category';
 import './categories.css';
 
-
 function Categories(props){
 
 return (
@@ -13,7 +12,9 @@ return (
 
 						<Category 
 							{...item}
-							key={item.id}/>
+							key={item.id}
+							handleOpenModal={props.handleOpenModal}
+							/>
 						)
 				})
 			}
