@@ -4,6 +4,7 @@ import { createPortal } from 'react-dom';
 class ModalContainer extends Component{
 	render(){
 		return(
+				//portal creation
 				createPortal(
 					this.props.children,
 					document.getElementById(

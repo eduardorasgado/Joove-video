@@ -13,7 +13,9 @@ class Home extends Component {
 				<Categories categories={categoriesData} />
 				{/*We should send children to modalC*/}
 				<ModalContainer>
-					<h1>Bienvenido a Joove</h1>
+					<Modal>
+						
+					</Modal>
 				</ModalContainer>
 			</HomeLayout>
 			);
