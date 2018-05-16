@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HomeLayout from '../components/home-layout';
 import Categories from '../../categories/components/categories';
 import Related from '../components/related-layout';
-import ModalContainer from './modal';
+import ModalContainer from '../../widgets/containers/modal';
 
 class Home extends Component {
 	render(){
@@ -11,7 +11,10 @@ class Home extends Component {
 			<HomeLayout>
 				<Related />
 				<Categories categories={categoriesData} />
-				<ModalContainer />
+				{/*We should send children to modalC*/}
+				<ModalContainer>
+					<h1>Bienvenido a Joove</h1>
+				</ModalContainer>
 			</HomeLayout>
 			);
 	}
