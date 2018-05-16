@@ -24,6 +24,10 @@ class Home extends Component {
 				{/*We should send children to modalC*/}
 				
 				{
+				{/*For not satisfied appearance
+						condition ? bject_to_appears :
+				*/}
+					{/*If condition is satisfied*/}
 					this.state.modalVisible &&
 					<ModalContainer>
 						<Modal handleClick={this.handleCloseModalClick}>
