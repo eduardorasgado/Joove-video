@@ -1,8 +1,9 @@
 import React from 'react';
+import './modal.css';
 
 function ModalComponent(props){
 	return(
-		<div>
+		<div className="Modal">
 			Portal
 			{props.children}
 		</div>
