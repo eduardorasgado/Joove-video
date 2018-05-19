@@ -5,7 +5,7 @@ import logo from '../../../images/logo.png'
 function Related(props){
 	return (
 		<div className="Related">
-			<img src={logo} width={250}/>
+			<a href={"./"}><img src={logo} width={250}/></a>
 		</div>
 		);
 }
