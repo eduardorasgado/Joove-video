@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import SearchLayout from '../components/search-layout';
 
-class Search extends Component{ 
+class Search extends Component{
+	state = {
+		value: "",
+	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
@@ -12,13 +15,21 @@ class Search extends Component{
 		this.input = element;
 	}
 
+	handleInputChange = event => {
+		this.setState({
+			value: event.target.value,
+		});
+	}
+
 	render(){
+		{/*We user ref for pass some unique id
+				 element through components*/}
 		return(
 			<SearchLayout
-				{/*We user ref for pass some unique id
-				 element through components*/}
 				setRef={this.setInputRef}
+				handleChange={this.handleInputChange}
 				handleSubmit={this.handleSubmit}
+				value={this.state.value}
 			/>
 			);
 	}
