@@ -5,6 +5,7 @@ import Related from '../components/related-layout';
 import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal-component';
 import HandleError from '../../errors/containers/handle-error';
+import Search from '../../widgets/containers/search.js';
 
 class Home extends Component {
 	state = {
@@ -28,8 +29,11 @@ class Home extends Component {
 			<HandleError>
 				<HomeLayout>
 					<Related />
-					<Categories categories={this.props.data.categories}
-					handleOpenModal={this.handleOpenModal} />
+					<div>
+						<Search />
+						<Categories categories={this.props.data.categories}
+						handleOpenModal={this.handleOpenModal} />
+					</div>
 					{/*We should send children to modalC*/}
 					
 					{
