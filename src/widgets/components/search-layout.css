@@ -1,0 +1,93 @@
+
+/*---------------SEARCH Input-----------------*/
+
+.box{
+  margin: 0px auto;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  width: 600px;
+  height: 50px;
+}
+
+.App-input {
+  overflow: hidden;
+  width: 600px;
+  vertical-align: top;
+  white-space: nowrap;
+  border-radius: 20px;
+}
+
+.App-input input#new{
+  width: 600px;
+  height: 50px;
+  background: #2b303b;
+  border: none;
+  font-size: 10pt;
+  float: left;
+  color: white;
+  padding-left: 15px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  
+}
+
+
+/*RULES FOR COLOR*/
+.App-input input#new::-webkit-input-placeholder {
+   color: #65737e;
+}
+ 
+.App-input input#new:-moz-placeholder { /* Firefox 18- */
+   color: #65737e;  
+}
+ 
+.App-input input#new::-moz-placeholder {  /* Firefox 19+ */
+   color: #65737e;  
+}
+ 
+.App-input input#new:-ms-input-placeholder {  
+   color: #65737e;  
+}
+
+/*Icon position and style*/
+.App-input button.icon {
+  -webkit-border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  border: none;
+  background: #232833;
+  height: 50px;
+  width: 100px;
+  color: #4f5b66;
+  opacity: 0;
+  font-size: 10pt;
+  text-align: left;
+  padding-left: 22px; 
+  cursor: pointer;
+  color: white;
+
+  -webkit-transition: all .55s ease;
+  -moz-transition: all .55s ease;
+  -ms-transition: all .55s ease;
+  -o-transition: all .55s ease;
+  transition: all .55s ease;
+}
+
+.App-input:hover button.icon, .App-input:active button.icon, .App-input:focus button.icon {
+    outline:none;
+    opacity: 1;
+    margin-left: -68px;
+    background: #EC7272FF;
+    border-radius: 20px;
+  }
+
+  .App-input:hover button.icon:hover {
+    background-color: white;
+    color: black;
+  }
+ 
