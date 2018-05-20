@@ -11,18 +11,18 @@ const PlayPause = (props) => (
 				<button
 				onClick={props.handleClick}
 				>
-				<Pause
-							size={15} 
-						 	color={"red"}/>
+				
+				<Play
+				 	size={15} 
+				 	color={"red"}/>
 				</button>
 			:
 			<button
 				onClick={props.handleClick}
 			>
-			<Play
-					 	size={15} 
-					 	color={"red"}/>
-					
+			<Pause
+				size={15} 
+			 	color={"red"}/>					
 			</button>
 		}
 				

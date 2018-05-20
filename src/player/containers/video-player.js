@@ -15,16 +15,22 @@ class VideoPlayerContainer extends Component{
 		});
 	}
 
+	componentDidMount = () => {
+		this.setState({
+			pause: (!this.props.autoplay)
+		});
+	}
+
 	render(){
 		return(
 				<VideoPlayerLayout>
-					<Title title={"Hola Enfermera"}/>
+					<Title title={"La historia sin final-open movies HD"}/>
 					<PlayPause
 						pause={this.state.pause}  
 						handleClick={this.togglePlay}
 					/>
 					<Video 
-					autoplay={false}
+					autoplay={this.props.autoplay}
 						src="http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4"
 					/>
 				</VideoPlayerLayout>

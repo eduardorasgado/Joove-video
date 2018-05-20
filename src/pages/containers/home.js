@@ -30,7 +30,9 @@ class Home extends Component {
 			<HandleError>
 				<HomeLayout>
 					<Related />
-					<VideoPlayerContainer />
+					<VideoPlayerContainer 
+							autoplay
+					/>
 					<div>
 						<Search />
 						<Categories categories={this.props.data.categories}
