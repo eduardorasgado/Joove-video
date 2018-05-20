@@ -6,6 +6,7 @@ import ModalContainer from '../../widgets/containers/modal';
 import Modal from '../../widgets/components/modal-component';
 import HandleError from '../../errors/containers/handle-error';
 import Search from '../../widgets/containers/search.js';
+import VideoPlayerContainer from '../../player/containers/video-player';
 
 class Home extends Component {
 	state = {
@@ -29,6 +30,7 @@ class Home extends Component {
 			<HandleError>
 				<HomeLayout>
 					<Related />
+					<VideoPlayerContainer />
 					<div>
 						<Search />
 						<Categories categories={this.props.data.categories}
