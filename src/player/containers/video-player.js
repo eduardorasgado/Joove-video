@@ -15,7 +15,7 @@ class VideoPlayerContainer extends Component{
 		});
 	}
 
-	componentDidMount = () => {
+	componentDidMount(){
 		this.setState({
 			pause: (!this.props.autoplay)
 		});
@@ -30,8 +30,9 @@ class VideoPlayerContainer extends Component{
 						handleClick={this.togglePlay}
 					/>
 					<Video 
-					autoplay={this.props.autoplay}
-						src="http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4"
+						autoplay={this.props.autoplay}
+						pause={this.state.pause}
+						src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 					/>
 				</VideoPlayerLayout>
 			);
