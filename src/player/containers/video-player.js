@@ -6,7 +6,10 @@ class VideoPlayerContainer extends Component{
 	render(){
 		return(
 				<VideoPlayerLayout>
-					<Video />
+					<Video 
+					autoplay={false}
+						src="http://peach.themazzone.com/durian/movies/sintel-1024-surround.mp4"
+					/>
 				</VideoPlayerLayout>
 			);
 	}
