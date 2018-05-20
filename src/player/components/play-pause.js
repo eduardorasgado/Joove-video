@@ -1,19 +1,19 @@
 import React from 'react';
-/*import './play-pause.css';*/
+import './play-pause.css';
 
 import Play from '../../icons/components/play';
 import Pause from '../../icons/components/pause';
 
 const PlayPause = (props) => (
-		<div>
+		<div className="PlayPause">
 			<button><Play
 					 	size={15} 
-					 	color={"white"}/>
+					 	color={"red"}/>
 					
 			</button>
 			<button><Pause
 						size={15} 
-					 	color={"white"}/>
+					 	color={"red"}/>
 			</button>
 		</div>
 	);
