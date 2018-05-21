@@ -1,0 +1,12 @@
+.Spinner {
+	background: transparent;
+	position: absolute;
+	float: top;
+	top: 200px;
+	left: 380px;
+}
+
+.Spinner img {
+	width: 50px;
+	background: inherit;
+}
