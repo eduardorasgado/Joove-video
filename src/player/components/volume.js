@@ -14,6 +14,7 @@ function VolumeComponent(props){
 						min={0}
 						max={1}
 						step={.05}
+						onChange={props.handleVolumeChange}
 					/>
 				</div>
 		</div>

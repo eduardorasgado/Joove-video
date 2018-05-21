@@ -31,7 +31,7 @@ class Home extends Component {
 				<HomeLayout>
 					<Related />
 					<VideoPlayerContainer 
-							autoplay
+							autoplay={false}
 					/>
 					<div>
 						<Search />

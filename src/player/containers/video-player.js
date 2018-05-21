@@ -102,6 +102,10 @@ class VideoPlayerContainer extends Component{
 		});
 	}
 
+	handleVolumeChange = (event) => {
+		this.video.volume = event.target.value;
+	}
+
 	render(){
 		return(
 				<VideoPlayerLayout>
@@ -120,6 +124,7 @@ class VideoPlayerContainer extends Component{
 							progress={this.state.progressActualTime}
 						 />
 						<VolumeComponent
+							handleVolumeChange={this.handleVolumeChange}
 						/>
 						<FullscreenComponent 
 						/>
