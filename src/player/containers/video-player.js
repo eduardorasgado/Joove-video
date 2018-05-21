@@ -25,10 +25,7 @@ class VideoPlayerContainer extends Component{
 		});
 	}
 
-	handleLoadedMetadata = event => {
-		this.video = event.target;
-		var sec_num = parseInt(this.video.duration);
-
+	formattingTime(sec_num){
 		var hours   = Math.floor(sec_num / 3600);
 	    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
 	    var seconds = sec_num - (hours * 3600) - (minutes * 60);
@@ -36,7 +33,20 @@ class VideoPlayerContainer extends Component{
 	    if (hours   < 10) {hours   = "0"+hours;}
 	    if (minutes < 10) {minutes = "0"+minutes;}
 	    if (seconds < 10) {seconds = "0"+seconds;}
-		var beautyTime = hours+":"+minutes+":"+seconds;
+
+	    if (hours == "00") {
+	    	//just in case there is no hours
+	    	return minutes+":"+seconds;
+	    }
+		return hours+":"+minutes+":"+seconds;
+	}
+
+	handleLoadedMetadata = event => {
+		this.video = event.target;
+		var sec_num = parseInt(this.video.duration);
+
+		var beautyTime = this.formattingTime(sec_num);
+
 		this.setState({
 			duration: beautyTime,
 		});
@@ -45,16 +55,10 @@ class VideoPlayerContainer extends Component{
 	handleTimeMediaUpdate = (event) => {
 		var sec_num = parseInt(this.video.currentTime);
 
-		var hours   = Math.floor(sec_num / 3600);
-	    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-	    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+		var currTime = this.formattingTime(sec_num);
 
-	    if (hours   < 10) {hours   = "0"+hours;}
-	    if (minutes < 10) {minutes = "0"+minutes;}
-	    if (seconds < 10) {seconds = "0"+seconds;}
-		var currTime = hours+":"+minutes+":"+seconds;
-
-		this.setState({currentTime:	currTime,
+		this.setState({
+			currentTime:	currTime,
 		});
 	}
 
