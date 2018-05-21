@@ -22,7 +22,7 @@ class VideoPlayerContainer extends Component{
 		durationRaw: 0,
 		currentTime: 0,
 		progressActualTime: 0,
-		loading: false,
+		loading: true,
 	}
 
 	togglePlay = (event) => {
@@ -93,6 +93,13 @@ class VideoPlayerContainer extends Component{
 
 	}
 
+	handleReady = (event) => {
+		//whe the video is ready loaded from server, not when seeking
+		this.setState({
+			loading:false,
+		});
+	}
+
 	render(){
 		return(
 				<VideoPlayerLayout>
@@ -121,6 +128,7 @@ class VideoPlayerContainer extends Component{
 						handleTimeUpdate={this.handleTimeMediaUpdate}
 						handleSeeking={this.handleSeeking}
 						handleSeeked={this.handleSeeked}
+						handleReadytoPlay={this.handleReady}
 						src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 					/>
 				</VideoPlayerLayout>

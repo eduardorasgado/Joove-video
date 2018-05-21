@@ -29,7 +29,8 @@ class Video extends Component {
 			handleMetadata,
 			handleTimeUpdate,
 			handleSeeking,
-			handleSeeked
+			handleSeeked,
+			handleReadytoPlay,
 		} = this.props
 
 		return(
@@ -42,6 +43,7 @@ class Video extends Component {
 						onTimeUpdate={handleTimeUpdate}
 						onSeeking={handleSeeking}
 						onSeeked={handleSeeked}
+						onCanPlayThrough={handleReadytoPlay}
 						/>
 				</div>
 			);
