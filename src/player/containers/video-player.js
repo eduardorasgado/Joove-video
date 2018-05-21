@@ -22,6 +22,7 @@ class VideoPlayerContainer extends Component{
 		durationRaw: 0,
 		currentTime: 0,
 		progressActualTime: 0,
+		loading: false,
 	}
 
 	togglePlay = (event) => {
@@ -73,6 +74,20 @@ class VideoPlayerContainer extends Component{
 		this.video.currentTime = (event.target.value * this.state.durationRaw) / 100;
 	}
 
+	handleSeeking = (event) => {
+		//component is loading
+		this.setState({
+			loading:true,
+		});
+	}
+
+	handleSeeked = (event) => {
+		//component finished loading
+		this.setState({
+			loading:false,
+		});
+	}
+
 	render(){
 		return(
 				<VideoPlayerLayout>
@@ -91,12 +106,16 @@ class VideoPlayerContainer extends Component{
 							progress={this.state.progressActualTime}
 						 />
 					</VideoPlayerControls>
-					<Spinner />
+					<Spinner
+						active={this.state.loading}
+					 />
 					<Video 
 						autoplay={this.props.autoplay}
 						pause={this.state.pause}
 						handleMetadata={this.handleLoadedMetadata}
 						handleTimeUpdate={this.handleTimeMediaUpdate}
+						handleSeeking={this.handleSeeking}
+						handleSeeked={this.handleSeeked}
 						src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 					/>
 				</VideoPlayerLayout>
