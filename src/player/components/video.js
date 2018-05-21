@@ -3,6 +3,7 @@ import './video.css';
 
 class Video extends Component {
 	togglePlay(){
+		//play or pause video player
 		if (this.props.pause){
 			this.video.play()
 		} else{
@@ -11,6 +12,7 @@ class Video extends Component {
 		
 	}
 	componentWillReceiveProps(nextProps){
+		//checking if button pause has been pressed
 		if (nextProps.pause !== this.props.pause){
 			this.togglePlay();
 		}
@@ -22,7 +24,7 @@ class Video extends Component {
 	}
 
 	render(){
-		
+		//setting global props and sending them to parent
 		const {
 			handleMetadata,
 			handleTimeUpdate,

@@ -9,6 +9,12 @@ import formattingTime from '../components/utilities';
 import ProgressBar from  '../components/progress-bar';
 
 class VideoPlayerContainer extends Component{
+	/*Pause is for showing play/pause button,
+	  duration is the formatted length of video for showing in view
+	  durationRaw is for calculating the progressbar position
+	  currentTime helps to show progressbar actual time in view,
+	  progressActualTime is the actual time not formatted for client calculations
+	*/
 	state = {
 		pause: true,
 		duration: 0,
@@ -36,6 +42,7 @@ class VideoPlayerContainer extends Component{
 
 		var beautyTime = formattingTime(sec_num);
 
+		//setting formatted duration and raw pure seconds duration
 		this.setState({
 			duration: beautyTime,
 			durationRaw: parseInt(this.video.duration),
@@ -45,14 +52,24 @@ class VideoPlayerContainer extends Component{
 	handleTimeMediaUpdate = (event) => {
 		//actual video position on time
 		var sec_num = parseInt(this.video.currentTime);
+
+		//actual video position in time raw not formatting
 		var timeHundred = ((parseInt(this.video.currentTime) * 100) / this.state.durationRaw);
 
+		//formatting the time
 		var currTime = formattingTime(sec_num);
 
 		this.setState({
 			currentTime: currTime,
 			progressActualTime: timeHundred,
 		});
+	}
+
+	handleProgressChange = (event) => {
+		console.log(event.target.value);
+		//bring the range in progressbar value(0-100) and converting to 
+		//real time in video for changing the actualtime in video-player
+		this.video.currentTime = (event.target.value * this.state.durationRaw) / 100;
 	}
 
 	render(){
@@ -69,6 +86,7 @@ class VideoPlayerContainer extends Component{
 							currentTime ={this.state.currentTime} 
 						/>
 						<ProgressBar
+							handleProgressChange={this.handleProgressChange}
 							progress={this.state.progressActualTime}
 						 />
 					</VideoPlayerControls>

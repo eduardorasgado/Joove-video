@@ -1,9 +1,10 @@
 .ProgressBar{
 	margin: 15px 0 0 0;	
 	padding: 0;
+	align-items: center;
 }
 
-.ProgressBar progress {
-	background-color: rgba(0,0,0,0.5);
+.ProgressBar input {
 	width: 500px;
+	border-radius: 2px;
 }

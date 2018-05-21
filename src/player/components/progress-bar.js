@@ -4,12 +4,13 @@ import './progress-bar.css'
 function ProgressBar(props) {
 	return(
 			<div className="ProgressBar">
-				<progress 
-					id='progress-bar' 
+				<input 
+					type="range"
 					min='0' 
-					max='100' 
+					max='100'
+					onChange={props.handleProgressChange} 
 					value={props.progress}
-					>0% played</progress>
+				/>
 			</div>
 		);
 }

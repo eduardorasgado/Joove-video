@@ -1,3 +1,7 @@
+/*
+This is for the formatting of time from raw seconds to hh:mm:ss
+*/
+
 function formattingTime(sec_num){
 		var hours   = Math.floor(sec_num / 3600);
 	    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
