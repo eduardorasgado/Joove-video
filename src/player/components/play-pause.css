@@ -3,7 +3,7 @@
 	height: 50px;
 }
 
-.PlayPause {
+.PlayPause button {
 	height: inherit;
 	border: none;
 	background: transparent;
@@ -13,4 +13,5 @@
 	font-size: 30px;
 	cursor: pointer;
 	padding: 0;
+	padding-bottom: 8px;
 }

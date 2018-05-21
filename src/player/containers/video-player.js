@@ -3,7 +3,8 @@ import VideoPlayerLayout from '../components/video-player-layout.js';
 import Video from '../components/video';
 import Title from '../components/title';
 import PlayPause from '../components/play-pause';
-import Timer from '../components/timer'
+import Timer from '../components/timer';
+import VideoPlayerControls from '../components/video-player-controls';
 
 class VideoPlayerContainer extends Component{
 	state = {
@@ -44,13 +45,15 @@ class VideoPlayerContainer extends Component{
 		return(
 				<VideoPlayerLayout>
 					<Title title={"La historia sin final-open movies HD"}/>
-					<PlayPause
+					<VideoPlayerControls>
+						<PlayPause
 						pause={this.state.pause}  
 						handleClick={this.togglePlay}
-					/>
-					<Timer 
-						duration={this.state.duration}
-					/>
+						/>
+						<Timer 
+							duration={this.state.duration}
+						/>
+					</VideoPlayerControls>
 					<Video 
 						autoplay={this.props.autoplay}
 						pause={this.state.pause}
