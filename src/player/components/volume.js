@@ -1,15 +1,15 @@
 import React from 'react';
+import Volume from '../../icons/components/volume';
+import './volume.css';
 
-function Volume(){
+function VolumeComponent(){
 	return(
-		<div>
-			<div>
+		<div className="VolumeIcon">
 				<Volume
 				 	size={15} 
-				 	color={"white"}/>
-			</div>
+				 	color={"red"}/>
 		</div>
 		);
 }
 
-export default Volume;
+export default VolumeComponent;

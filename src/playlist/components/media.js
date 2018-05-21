@@ -3,7 +3,6 @@ import './media.css';
 //fue instalado aparte con npm install prop-types --save
 import PropTypes from 'prop-types';
 //dump components
-import Volume from '../../icons/components/volume';
 import Fullscreen from '../../icons/components/fullscreen';
 
 class Media extends PureComponent{
