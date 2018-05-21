@@ -2,13 +2,16 @@ import React from 'react';
 import Volume from '../../icons/components/volume';
 import './volume.css';
 
-function VolumeComponent(){
+function VolumeComponent(props){
 	return(
-		<div className="VolumeIcon">
+		<button className="VolumeIcon">
 				<Volume
 				 	size={15} 
 				 	color={"red"}/>
-		</div>
+				<div className="Volume-range">
+					<input type="range"/>
+				</div>
+		</button>
 		);
 }
 
