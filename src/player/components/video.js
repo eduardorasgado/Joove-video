@@ -24,7 +24,8 @@ class Video extends Component {
 	render(){
 		
 		const {
-			handleMetadata
+			handleMetadata,
+			handleTimeUpdate,
 		} = this.props
 
 		return(
@@ -34,6 +35,7 @@ class Video extends Component {
 						src={this.props.src}
 						ref={this.setRef}
 						onLoadedMetadata={handleMetadata}
+						onTimeUpdate={handleTimeUpdate}
 						/>
 				</div>
 			);

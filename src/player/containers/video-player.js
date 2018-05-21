@@ -10,6 +10,7 @@ class VideoPlayerContainer extends Component{
 	state = {
 		pause: true,
 		duration: 0,
+		currentTime: 0,
 	}
 
 	togglePlay = (event) => {
@@ -41,6 +42,12 @@ class VideoPlayerContainer extends Component{
 		});
 	}
 
+	handleTimeMediaUpdate = (event) => {
+		console.log(parseInt(this.video.currentTime))
+		this.setState({currentTime:	this.video.currentTime,
+		});
+	}
+
 	render(){
 		return(
 				<VideoPlayerLayout>
@@ -58,6 +65,7 @@ class VideoPlayerContainer extends Component{
 						autoplay={this.props.autoplay}
 						pause={this.state.pause}
 						handleMetadata={this.handleLoadedMetadata}
+						handleTimeUpdate={this.handleTimeMediaUpdate}
 						src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
 					/>
 				</VideoPlayerLayout>
