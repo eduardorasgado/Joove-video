@@ -42,7 +42,8 @@ class Home extends Component {
 					
 					{
 					/*For not satisfied appearance
-							condition ? bject_to_appears :
+							condition ? bject_to_appears_if_True :
+							if_false_execute_this
 					*/
 						/*If condition is satisfied*/
 						this.state.modalVisible &&

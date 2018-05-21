@@ -5,6 +5,7 @@ import Title from '../components/title';
 import PlayPause from '../components/play-pause';
 import Timer from '../components/timer';
 import VideoPlayerControls from '../components/video-player-controls';
+import formattingTime from '../components/utilities'
 
 class VideoPlayerContainer extends Component{
 	state = {
@@ -25,27 +26,12 @@ class VideoPlayerContainer extends Component{
 		});
 	}
 
-	formattingTime(sec_num){
-		var hours   = Math.floor(sec_num / 3600);
-	    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
-	    var seconds = sec_num - (hours * 3600) - (minutes * 60);
-
-	    if (hours   < 10) {hours   = "0"+hours;}
-	    if (minutes < 10) {minutes = "0"+minutes;}
-	    if (seconds < 10) {seconds = "0"+seconds;}
-
-	    if (hours == "00") {
-	    	//just in case there is no hours
-	    	return minutes+":"+seconds;
-	    }
-		return hours+":"+minutes+":"+seconds;
-	}
-
 	handleLoadedMetadata = event => {
+		//calculating the video total duration
 		this.video = event.target;
 		var sec_num = parseInt(this.video.duration);
 
-		var beautyTime = this.formattingTime(sec_num);
+		var beautyTime = formattingTime(sec_num);
 
 		this.setState({
 			duration: beautyTime,
@@ -53,9 +39,10 @@ class VideoPlayerContainer extends Component{
 	}
 
 	handleTimeMediaUpdate = (event) => {
+		//actual video position on time
 		var sec_num = parseInt(this.video.currentTime);
 
-		var currTime = this.formattingTime(sec_num);
+		var currTime = formattingTime(sec_num);
 
 		this.setState({
 			currentTime:	currTime,
