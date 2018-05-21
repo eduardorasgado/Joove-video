@@ -103,6 +103,8 @@ class VideoPlayerContainer extends Component{
 	}
 
 	handleVolumeChange = (event) => {
+		//reading value from range in component volume
+		//and set it to video metadata volume
 		this.video.volume = event.target.value;
 	}
 
