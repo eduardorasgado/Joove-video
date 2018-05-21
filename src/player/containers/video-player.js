@@ -79,13 +79,18 @@ class VideoPlayerContainer extends Component{
 		this.setState({
 			loading:true,
 		});
+		//Showing button play 
+		this.togglePlay();
 	}
 
 	handleSeeked = (event) => {
+		//showingbutton pause
+		this.togglePlay();
 		//component finished loading
 		this.setState({
 			loading:false,
 		});
+
 	}
 
 	render(){
