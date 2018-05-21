@@ -36,9 +36,6 @@ class Media extends PureComponent{
 								{this.state.author}		
 					</p>
 					
-					<Volume
-					 	size={15} 
-					 	color={"white"}/>
 					 <Fullscreen
 					 	size={15} 
 					 	color={"white"}/>	
