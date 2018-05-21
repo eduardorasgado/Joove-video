@@ -9,6 +9,7 @@ import formattingTime from '../components/utilities';
 import ProgressBar from  '../components/progress-bar';
 import Spinner from '../components/spinner';
 import VolumeComponent from '../components/volume';
+import FullscreenComponent from '../components/fullscreen';
 
 class VideoPlayerContainer extends Component{
 	/*Pause is for showing play/pause button,
@@ -119,6 +120,8 @@ class VideoPlayerContainer extends Component{
 							progress={this.state.progressActualTime}
 						 />
 						<VolumeComponent
+						/>
+						<FullscreenComponent 
 						/>
 					</VideoPlayerControls>
 					<Spinner

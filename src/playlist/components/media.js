@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import './media.css';
 //fue instalado aparte con npm install prop-types --save
 import PropTypes from 'prop-types';
-//dump components
-import Fullscreen from '../../icons/components/fullscreen';
 
 class Media extends PureComponent{
 	constructor(props){
@@ -34,10 +32,6 @@ class Media extends PureComponent{
 					<p className="Media-author">
 								{this.state.author}		
 					</p>
-					
-					 <Fullscreen
-					 	size={15} 
-					 	color={"white"}/>	
 				</div>
 			</div>
 			);
