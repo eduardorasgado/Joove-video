@@ -140,7 +140,7 @@ class VideoPlayerContainer extends Component{
 				<VideoPlayerLayout
 					setRef={this.setRef}
 				>
-					<Title title={"La historia sin final-open movies HD"}/>
+					<Title title={this.props.titleMedia}/>
 					<VideoPlayerControls>
 						<PlayPause
 						pause={this.state.pause}  
@@ -172,7 +172,7 @@ class VideoPlayerContainer extends Component{
 						handleSeeking={this.handleSeeking}
 						handleSeeked={this.handleSeeked}
 						handleReadytoPlay={this.handleReady}
-						src="http://download.blender.org/peach/bigbuckbunny_movies/BigBuckBunny_320x180.mp4"
+						src={this.props.media}
 					/>
 				</VideoPlayerLayout>
 			);

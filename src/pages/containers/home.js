@@ -51,6 +51,7 @@ class Home extends Component {
 								<VideoPlayerContainer 
 										autoplay={false}
 										media={this.state.media.src}
+										titleMedia={this.state.media.title}
 								/>
 							</Modal>
 						</ModalContainer>
