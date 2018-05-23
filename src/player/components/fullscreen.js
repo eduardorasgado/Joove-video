@@ -5,11 +5,13 @@ import './fullscreen.css';
 const FullScreenComponent = (props) =>(
 	<div 
 		className="FullscreenIcon"
-		onClick={props.handleFullscreenClick}
+		
 	>
-		<Fullscreen
-		 	size={15} 
-		 	color={"red"}/>	
+		<button onClick={props.handleFullscreenClick}>
+			<Fullscreen
+			 	size={15} 
+			 	color={"red"}/>	
+		</button>
 	</div>
 )
 
