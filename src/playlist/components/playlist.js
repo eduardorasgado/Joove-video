@@ -20,7 +20,7 @@ function Playlist(props) {
 						//ES7 let us to use spread operator
 						return <Media {...item}
 								key={item.id}
-								handleClick={props.handleOpenModal}
+								openModal={props.handleOpenModal}
 								/>
 					}) //end  return playlistGroups.playlist.map
 			}
