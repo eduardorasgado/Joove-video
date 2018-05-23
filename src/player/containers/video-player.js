@@ -118,9 +118,15 @@ class VideoPlayerContainer extends Component{
 		}
 	}
 
+	setRef = element => {
+		this.PlayerElement = element;
+	}
+
 	render(){
 		return(
-				<VideoPlayerLayout>
+				<VideoPlayerLayout
+					setRef={this.setRef}
+				>
 					<Title title={"La historia sin final-open movies HD"}/>
 					<VideoPlayerControls>
 						<PlayPause
