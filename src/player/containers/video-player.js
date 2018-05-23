@@ -108,6 +108,16 @@ class VideoPlayerContainer extends Component{
 		this.video.volume = event.target.value;
 	}
 
+	handleFSC = (event) => {
+		//Browser API use to fullscreen
+		if (!document.webkitIsFullScreen) {
+			//if not fullscreen, do it
+		} else{
+			//if is fullscreen, make it normal
+
+		}
+	}
+
 	render(){
 		return(
 				<VideoPlayerLayout>
@@ -128,7 +138,8 @@ class VideoPlayerContainer extends Component{
 						<VolumeComponent
 							handleVolumeChange={this.handleVolumeChange}
 						/>
-						<FullscreenComponent 
+						<FullscreenComponent
+						handleFullscreenClick={handleFSC} 
 						/>
 					</VideoPlayerControls>
 					<Spinner
