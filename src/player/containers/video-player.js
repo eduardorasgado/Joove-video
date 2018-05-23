@@ -110,12 +110,24 @@ class VideoPlayerContainer extends Component{
 
 	handleFSClick = (event) => {
 		//Browser API use to fullscreen
-		if (!document.webkitIsFullScreen) {
-			//if not fullscreen, do it
-			this.player.webkitRequestFullScreen();
-		} else{
-			//if is fullscreen, make it normal
 
+		//if is fullscreen, make it normal
+		if (document.mozFullScreen) {
+			//mozilla
+			document.mozCancelFullScreen();
+		} 
+		else if(document.webkitIsFullScreen){
+			//chrome, zafari
+			document.webkitExitFullscreen();
+		}
+		//if not fullscreen, do it
+		else if(this.player.mozRequestFullScreen){
+			//mozilla
+			this.player.mozRequestFullScreen();
+		}
+		else if(this.player.webkitRequestFullScreen){
+			//chrome, zafari
+			this.player.webkitRequestFullScreen();
 		}
 	}
 
